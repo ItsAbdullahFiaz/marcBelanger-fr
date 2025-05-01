@@ -1,0 +1,178 @@
+/*! Raise: style_default */
+$primary: #E74C3C;
+$color-1: $primary;
+$color-2: #2B9CD9;
+$color-3: #03354F;
+
+/*!
+ * Bootstrap v4.3.1 (https://getbootstrap.com/)
+ * Copyright 2011-2019 The Bootstrap Authors
+ * Copyright 2011-2019 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@import 'functions';
+@import 'vcs-functions';
+@import 'variables';
+@import 'mixins';
+@import 'vcs-mixins_alerts';
+@import 'reboot';
+@import 'type';
+@import 'fonts';
+@import 'images';
+@import 'code';
+@import 'grid';
+@import 'tables';
+@import 'forms';
+
+@import 'buttons';
+@import 'vcs-buttons';
+@import 'transitions';
+@import 'dropdown';
+@import 'button-group';
+@import 'input-group';
+@import 'custom-forms';
+@import 'nav';
+@import 'navbar';
+@import 'card';
+@import 'breadcrumb';
+@import 'pagination';
+
+@import 'badge';
+@import 'jumbotron';
+@import 'alert';
+
+@import 'progress';
+@import 'media';
+@import 'list-group';
+@import 'close';
+@import 'toasts';
+@import 'modal';
+@import 'tooltip';
+@import 'popover';
+@import 'carousel';
+
+@import 'spinners';
+@import 'utilities';
+
+@import 'print';
+
+/* NationBuilder Add-ons
+-----------------------------------------------*/
+@import 'moneybomb';
+@import 'slider-card';
+@import 'stripe';
+
+/* reCaptcha
+-----------------------------------------------*/
+.grecaptcha-badge {
+  z-index: 9994;
+}
+#recaptcha-input {
+	margin-top: 3rem;
+}
+.g-recaptcha {
+	> * {
+		margin: 0 auto;
+	}
+}
+
+/* VCS
+-----------------------------------------------*/
+@import 'vcs-animations';
+@import 'vcs-dropzone';
+@import 'vcs-nav';
+@import 'vcs-custom';
+
+/* Express payment options
+-----------------------------------------------*/
+#payment-methods {
+  display: none;
+  .StripeElement {
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    height: 0;
+  }
+}
+
+#cc-request-button {
+  padding-top: 3.5rem;
+  button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+  }
+}
+
+#credit-card-icon {
+  display: inline-block;
+  background-image: url("/assets/icons/ic_creditcard.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 32px 32px;
+  width: 32px;
+  height: 32px;
+  margin-right: 0.5em;
+}
+
+#selected-payment-method {
+  display: none;
+  border-radius: 2px;
+  text-align: center;
+  div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  a,
+  p  {
+    font-size: 1em;
+  }
+}
+
+#payment-method-icon {
+  display: inline-block;
+  background-image: url("/assets/icons/ic_expresspay-other.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 40px 24px;
+  width: 40px;
+  height: 24px;
+  margin-right: 1em;
+  &[data-type="apple_pay"] {
+    background-image: url("/assets/icons/ic_applepay.svg");
+  }
+  &[data-type="google_pay"] {
+    background-image: url("/assets/icons/ic_googlepay.svg");
+  }
+}
+
+#submitted-payment-method,
+#demographics-read-only,
+#address-read-only,
+#apple-pay-notice,
+#your-info,
+#cc-info {
+  display: none;
+}
+
+#edit-demographics,
+#edit-address {
+  float: right;
+}
+
+.address-line {
+  display: block;
+}
+
+.floating-donation-label {
+  -webkit-transform: translate(0.07em, -75%) scale(0.55);
+  transform: translate(0.07em, -75%) scale(0.55);
+  color: $color-2;
+}
+
