@@ -25,9 +25,22 @@
 
       <div class="carousel-inner">
         {% for feature in page.features %}
-          <div class="carousel-item {% if forloop.first %}active{% endif %}">
+          <div class="carousel-item {% if forloop.first %}active{% endif %}" data-youtube-id="{{ 'GQvCZFvZEmU' | default: '' }}">
             <a href="{{ feature.page.url }}" class="d-block position-relative h-100">
-              <img src="{{ feature.image_url }}" class="d-block w-100 h-100" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/>
+              <!-- Fallback image that will be hidden when video loads -->
+              <img src="{{ feature.image_url }}" class="d-block w-100 h-100 fallback-image" height="{{ feature.image_height }}" width="{{ feature.image_width }}"/>
+              
+              <!-- YouTube video container -->
+              <div class="youtube-background" id="youtube-player-{{ forloop.index0 }}"></div>
+              
+              <!-- Overlay div -->
+              <div class="feature-overlay"></div>
+              
+              <div class="nectar-shape-divider-wrap" style="height:50px;" data-height="50" data-style="curve" data-position="bottom">
+                <svg class="nectar-shape-divider" aria-hidden="true" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" preserveAspectRatio="none">
+                  <path d="M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z"></path>
+                </svg>
+              </div>
 
               {% if feature.headline.size > 0 %}
                 {% assign components = feature.headline | split:"|" %}
@@ -36,11 +49,11 @@
                   <div class="container">
 
                     {% if page.is_homepage? %}
-                      <h1 class="text-white d-inline-block px-sm-5 mt-2 mb-3">
+                      <h1 class="mt-2 mb-3 ml-0">
                         {{ components[0] }}
                       </h1>
                     {% else %}
-                      <h2 class="text-white d-inline-block px-sm-5 mt-2 mb-3">
+                      <h2 class="mt-2 mb-3 ml-0">
                         {{ components[0] }}
                       </h2>
                     {% endif %}
@@ -73,7 +86,76 @@
       })();
     </script>
 
-    <script src="adjust-features.js"></script>
+    <!-- YouTube API Script -->
+    <script>
+      // Load YouTube API
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      
+      var players = [];
+      
+      // When YouTube API is ready
+      function onYouTubeIframeAPIReady() {
+        document.querySelectorAll('.carousel-item').forEach(function(item, index) {
+          var youtubeId = item.getAttribute('data-youtube-id');
+          if (youtubeId) {
+            players[index] = new YT.Player('youtube-player-' + index, {
+              videoId: youtubeId,
+              playerVars: {
+                autoplay: index === 0 ? 1 : 0, // Autoplay only the first one
+                controls: 0,
+                showinfo: 0,
+                modestbranding: 1,
+                loop: 1,
+                playlist: youtubeId, // Needed for looping
+                fs: 0,
+                cc_load_policy: 0,
+                iv_load_policy: 3,
+                autohide: 0,
+                mute: 1 // Muted for autoplay to work
+              },
+              events: {
+                'onReady': function(event) {
+                  if (index === 0) { // Only play the first slide's video
+                    event.target.playVideo();
+                    // Hide the fallback image once video is playing
+                    item.querySelector('.fallback-image').style.opacity = 0;
+                  }
+                },
+                'onStateChange': function(event) {
+                  // If video ends, restart it
+                  if (event.data === YT.PlayerState.ENDED) {
+                    event.target.playVideo();
+                  }
+                }
+              }
+            });
+          }
+        });
+        
+        // Handle carousel slide changes
+        $('#{{ id | default: "page-features" }}').on('slid.bs.carousel', function(event) {
+          var index = $(event.relatedTarget).index();
+          
+          // Pause all videos first
+          players.forEach(function(player) {
+            if (player && typeof player.pauseVideo === 'function') {
+              player.pauseVideo();
+            }
+          });
+          
+          // Play the current slide's video
+          if (players[index] && typeof players[index].playVideo === 'function') {
+            players[index].playVideo();
+            
+            // Hide this slide's fallback image
+            $(event.relatedTarget).find('.fallback-image').css('opacity', 0);
+          }
+        });
+      }
+    </script>
     
   {% endif %}
 {% endif %}

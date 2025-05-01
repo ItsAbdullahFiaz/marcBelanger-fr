@@ -176,3 +176,487 @@ $color-3: #03354F;
   color: $color-2;
 }
 
+
+
+@media (min-width: 768px) {
+    .carousel-item {
+        height: 43.25rem;
+    }
+    .carousel-caption.single {
+        padding: 15em 0;
+    }
+    .carousel-caption h1 {
+        width: 450px;
+        font-size: 60px !important;
+      	color: #fff !important;
+    }
+}
+
+.carousel-caption h1 {
+  width: 100%;
+  color: #0b3d91;
+}
+.carousel-caption {
+  background: rgba(3, 53, 79, 0.5);
+}
+
+
+
+
+                    :root {
+            --mb-primary-color: #0B3D91;
+            --mb-secondary-color: #D10024;
+            --mb-accent-color: #FFD700;
+            --mb-dark-color: #212529;
+            --mb-light-color: #F8F9FA;
+        }
+
+        .mb-reset * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mb-main {
+            line-height: 1.6;
+            color: var(--mb-dark-color);
+            background-color: var(--mb-light-color);
+        }
+
+        .mb-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .mb-header {
+            background: linear-gradient(rgba(11, 61, 145, 0.9), rgba(11, 61, 145, 0.9)), url('https://placehold.co/1200x600/0B3D91/FFFFFF?text=Banner+Image') no-repeat center center/cover;
+            color: white;
+            padding: 120px 0;
+            text-align: center;
+        }
+
+        .mb-header-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .mb-header-subtitle {
+            font-size: 1.5rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+        }
+
+        .mb-btn {
+            display: inline-block;
+            background-color: var(--mb-secondary-color);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            margin: 10px;
+            transition: all 0.3s ease;
+            border: 2px solid var(--mb-secondary-color);
+        }
+
+        .mb-btn:hover {
+            background-color: transparent;
+            color: white;
+        }
+
+        .mb-btn-outline {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .mb-btn-outline:hover {
+            background-color: white;
+            color: var(--mb-primary-color);
+        }
+
+        .mb-section {
+            padding: 80px 0;
+        }
+
+        .mb-section-accent {
+            background-color: var(--mb-primary-color);
+            color: white;
+        }
+
+        .mb-reconquete-section {
+            background: linear-gradient(rgba(11, 61, 145, 0.85), rgba(11, 61, 145, 0.9)), url('https://assets.nationbuilder.com/marcbelanger/pages/3/attachments/original/1744704273/flag-quebec-51993.jpg?1744704273') no-repeat center center/cover;
+            background-attachment: fixed;
+            color: white;
+        }
+
+        .mb-section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .mb-section-title {
+            font-size: 2.5rem;
+            color: var(--mb-primary-color);
+            display: inline-block;
+            border-bottom: 4px solid var(--mb-secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .mb-section-accent .mb-section-title {
+            color: white;
+            border-bottom-color: var(--mb-accent-color);
+        }
+
+        .mb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .mb-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .mb-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .mb-card-img {
+            height: 200px;
+            background: url('https://placehold.co/600x400/0B3D91/FFFFFF?text=Image') no-repeat center center/cover;
+        }
+
+        .mb-card-content {
+            padding: 30px;
+        }
+
+        .mb-card-title {
+            color: var(--mb-primary-color);
+            margin-bottom: 15px;
+        }
+
+        .mb-accent-box {
+            background-color: rgba(11, 61, 145, 0.05);
+            border-left: 5px solid var(--mb-primary-color);
+            padding: 30px;
+            margin: 30px 0;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .mb-quote {
+            font-size: 1.5rem;
+            line-height: 1.8;
+            color: var(--mb-primary-color);
+            font-style: italic;
+            position: relative;
+            padding: 20px 40px;
+            margin: 40px 0;
+        }
+
+        .mb-quote::before,
+        .mb-quote::after {
+            content: '"';
+            font-size: 4rem;
+            color: var(--mb-accent-color);
+            position: absolute;
+            opacity: 0.3;
+        }
+
+        .mb-quote::before {
+            top: -20px;
+            left: 0;
+        }
+
+        .mb-quote::after {
+            bottom: -40px;
+            right: 0;
+        }
+
+        .mb-cta {
+            background: linear-gradient(rgba(209, 0, 36, 0.8), rgba(209, 0, 36, 0.8));
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .mb-cta .mb-container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .mb-cta-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .mb-footer {
+            background-color: var(--mb-dark-color);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .mb-social-links {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .mb-social-link {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            margin: 0 10px;
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+
+        .mb-social-link:hover {
+            background-color: var(--mb-secondary-color);
+        }
+
+        .mb-copyright {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        .mb-profile-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .mb-btn-action {
+            margin-left: 0;
+            margin-top: 20px;
+        }
+
+        .mb-btn-white {
+            background-color: white;
+            color: var(--mb-secondary-color);
+            border-color: white;
+        }
+
+        .mb-actions {
+            margin-top: 40px;
+        }
+
+        .mb-logo {
+            margin-bottom: 20px;
+        }
+
+        .mb-two-cols {
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .mb-youtube-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        #youtube-background {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100vw;
+            height: 100vh;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .mb-header {
+                padding: 80px 0;
+            }
+
+            .mb-header-title {
+                font-size: 2.5rem;
+            }
+
+            .mb-header-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .mb-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .mb-two-cols {
+                grid-template-columns: 1fr;
+            }
+            
+            .mb-reconquete-section {
+                background-attachment: scroll;
+            }
+        }
+
+
+
+
+
+       .nectar-shape-divider-wrap {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50px;
+        z-index: 3;
+        transform: translateZ(0);
+      }
+      
+      .nectar-shape-divider {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+        line-height: 0;
+      }
+
+      .feature-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%; /* Cover full height including curve */
+        background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+        z-index: 2;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 75% 100%, 25% 100%, 0 calc(100% - 50px)); /* Approximate curve shape */
+      }
+      
+      /* For browsers that don't support clip-path */
+      @supports not (clip-path: polygon(0 0)) {
+        .feature-overlay {
+          height: calc(100% - 50px);
+        }
+        
+        .feature-overlay::after {
+          content: "";
+          position: absolute;
+          bottom: -50px;
+          left: 0;
+          width: 100%;
+          height: 50px;
+          background-color: rgba(0, 0, 0, 0.3);
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z'%3E%3C/path%3E%3C/svg%3E");
+          -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z'%3E%3C/path%3E%3C/svg%3E");
+          mask-size: 100% 100%;
+          -webkit-mask-size: 100% 100%;
+        }
+      }
+
+
+.carousel-caption {
+    background: transparent !important;
+}
+
+
+ 
+      .nectar-shape-divider-wrap {
+        position: absolute;
+        top: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 50px;
+        z-index: 3;
+        transform: translateZ(0);
+      }
+      
+      .nectar-shape-divider {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: 3;
+        line-height: 0;
+      }
+
+      .feature-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%; /* Cover full height including curve */
+        background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black overlay */
+        z-index: 2;
+        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 50px), 75% 100%, 25% 100%, 0 calc(100% - 50px)); /* Approximate curve shape */
+      }
+      
+      /* YouTube video container styling */
+      .youtube-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: 1;
+      }
+      
+      .youtube-background iframe {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100vw;
+        height: 56.25vw; /* 16:9 aspect ratio */
+        min-height: 100%;
+        min-width: 177.77vh; /* 16:9 aspect ratio */
+        transform: translate(-50%, -50%);
+      }
+      
+      .fallback-image {
+        transition: opacity 0.8s ease;
+        z-index: 1;
+      }
+      
+      /* For browsers that don't support clip-path */
+      @supports not (clip-path: polygon(0 0)) {
+        .feature-overlay {
+          height: calc(100% - 50px);
+        }
+        
+        .feature-overlay::after {
+          content: "";
+          position: absolute;
+          bottom: -50px;
+          left: 0;
+          width: 100%;
+          height: 50px;
+          background-color: rgba(0, 0, 0, 0.3);
+          mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z'%3E%3C/path%3E%3C/svg%3E");
+          -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1000 100' preserveAspectRatio='none'%3E%3Cpath d='M 0 0 c 0 0 200 50 500 50 s 500 -50 500 -50 v 101 h -1000 v -100 z'%3E%3C/path%3E%3C/svg%3E");
+          mask-size: 100% 100%;
+          -webkit-mask-size: 100% 100%;
+        }
+      }
